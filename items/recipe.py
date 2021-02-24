@@ -8,7 +8,7 @@ class Recipe(Item):
     cover = Css('div.recipe > a > div.cover > img', attr='data-src')
 
     def clean_name(self, name):
-        return name.strip()
+        return name.split(' ')
 
     class Meta:
         source = XPath('//div[contains(@class, "main-panel")]//div[@class="normal-recipe-list"]/ul[@class="list"]/li')
